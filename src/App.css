@@ -43,7 +43,7 @@
   }
 }
 
-/*Remove horizontal scrollbar from css*/
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -51,8 +51,4 @@
 .menu-bar {
     font-size: small;
     background: #efefef;
-}
-
-.menu {
-    background: aquamarine;
 }

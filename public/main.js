@@ -4,12 +4,16 @@ require('@electron/remote/main').initialize()
 function createWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
+        title: "My App",
         width: 1024,
         height: 768,
         minWidth: 1024,
         minHeight: 768,
+        resizable: false,
+        maximizable: false,
         autoHideMenuBar: true,
-        menu:null,
+        menu: null,
+        icon: __dirname + '/logo192.png',       
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
