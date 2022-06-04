@@ -1,3 +1,9 @@
+:root {
+    --reactAppMenu-color-bg: #ecf2ff;
+    --reactAppMenu-color-bg-hover: #c6d8ff;
+    --reactAppMenu-color-bg-focus: #9cbbff;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/*Remove horizontal scrollbar from css*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-bar {
+    font-size: small;
+    background: #efefef;
+}
+
+.menu {
+    background: aquamarine;
 }
