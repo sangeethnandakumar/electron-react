@@ -1,6 +1,9 @@
 const { app, BrowserWindow } = require('electron')
 require('@electron/remote/main').initialize()
 
+const path = require('path');
+const isDev = require('electron-is-dev');
+
 function createWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
@@ -13,7 +16,7 @@ function createWindow() {
         maximizable: false,
         autoHideMenuBar: true,
         menu: null,
-        icon: __dirname + '/logo192.png',       
+        icon: __dirname + '/logo192.png',
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModule: true,
@@ -22,7 +25,11 @@ function createWindow() {
     })
 
     // and load the index.html of the app.
-    win.loadURL('http://localhost:3000')
+    win.loadURL(
+        isDev
+            ? 'http://localhost:3000'
+            : `file://${path.join(__dirname, '../build/index.html')}`
+    );
 }
 
 app.on('ready', createWindow);
